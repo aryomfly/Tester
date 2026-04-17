@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестер: Экзамен №7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+    <div id="start-screen">
+        <h1>Экзамен №7: Интернет и HTML</h1>
+        <div class="menu-grid">
+            <button class="menu-btn" onclick="startQuiz(20)">20 случайных вопросов</button>
+            <button class="menu-btn" onclick="startQuiz('all')">Все вопросы (107)</button>
+        </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+        <div id="progress-container">
+            <span id="progress-text">Вопрос 1 из X</span>
+            <div id="progress-bar-bg"><div id="progress-bar-fill"></div></div>
+        </div>
+        <div id="question-text"></div>
+        <div id="answers-container">
+            <button class="answer-btn" onclick="handleAnswer(0)"></button>
+            <button class="answer-btn" onclick="handleAnswer(1)"></button>
+            <button class="answer-btn" onclick="handleAnswer(2)"></button>
+            <button class="answer-btn" onclick="handleAnswer(3)"></button>
+        </div>
+    </div>
+
+    <div id="result-screen" class="hidden">
+        <h2>Результаты</h2>
+        <div id="stats-text"></div>
+        <div class="chart-wrapper"><canvas id="resultChart" width="200" height="200"></canvas></div>
+        
+        <div id="error-review" class="hidden">
+            <h3>Ваши ошибки:</h3>
+            <div id="wrong-list"></div>
+            <button class="menu-btn retry-btn" onclick="retryErrors()">Исправить ошибки</button>
+        </div>
+        
+        <button class="menu-btn" onclick="location.reload()">На главную</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
